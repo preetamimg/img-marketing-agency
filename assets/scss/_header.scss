@@ -1,73 +1,414 @@
-// ? @@@@@@@@@@@@@@@@@@@@@@[  example start  ]@@@@@@@@@@@@@@@@@@@@@@
-// [data-page-name=example] {
-  @include media-breakpoint(basic) {
+.Header {
+    & .logoBox {
+        & img {
+            height: 50px;
+        }
+    }
+    & .headerSearchBox {
+        & .searchInput {
+            font-size: 14px;
+            height: 45px;
+            padding-right: 50px;
+            border-radius: 0;
+        }
+        & .searchImg {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            height: 16px;
+            filter: brightness(0.5);
+            transform: translateY(-50%);
+        }
+    }
+    & .LinkBox {
+        & .LinkLi {
+            padding: 0.75rem 1.75rem;
+            cursor: pointer;
+            & .LinkAnchor {
+                color: $gray-900;
+                text-decoration: none;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: 400;
+                letter-spacing: 0.2px;
+            }
+            & .liHoverBox {
+                z-index: -5;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.3s linear;
+                min-width: 250px;
+                & .subCatLiHead {
+                    font-size: 15px;
+                    color: $theme1;
+                    font-weight: 500;
+                    padding-left: 15px;
+                    position: relative;
+                    &::before {
+                        height: 2.5px;
+                        width: 10px;
+                        background-color: $theme1;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+                & .subCatLi {
+                    position: relative;
+                    transition: 0.3s ease-in-out;
+                    & .subCatAnchor {
+                        font-size: 14px;
+                        color: $gray-900;
+                        transition: 0.3s ease-in-out;
+                        display: inline-block;
+                    }
+                    &::before {
+                        height: 6px;
+                        width: 6px;
+                        border-radius: 50%;
+                        background-color: $theme1;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: 0.3s ease-in-out;
+                    }
+                    &:hover {
+                        &::before {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                        & .subCatAnchor {
+                            color: $theme1;
+                            transform: translateX(15px);
+                        }
+                    }
+                }
+                & .subCategoryLi {
+                    color: $gray-900;
+                    cursor: pointer;
+                    font-size: 14px;
+                    padding: 12px 18px;
+                    border-radius: 4px;
+                    &.active {
+                        color: $theme1;
+                        background-color: lighten($theme1, 45);
+                    }
+                }
+                & .innerCatBox {
+                    display: none;
+                    &.active {
+                        display: flex !important;
+                    }
+                }
+            }
+            &.LinkLiSingleHover {
+                position: relative;
+                & .liHoverBox {
+                    padding: 7px 15px;
+                    width: 200px !important;
+                }
+            }
+            & .LinkLiLi {
+                // padding: 0.75rem 1.75rem;
+                cursor: pointer;
+                & .liHoverInnerBox {
+                z-index: -5;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.3s linear;
+                min-width: 250px;
+                top: 10px !important;
+                left: 224px !important;
+                & .subCatLiHead {
+                    font-size: 15px;
+                    color: $theme1;
+                    font-weight: 500;
+                    padding-left: 15px;
+                    position: relative;
+                    &::before {
+                        height: 2.5px;
+                        width: 10px;
+                        background-color: $theme1;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+                & .subCatLi {
+                    position: relative;
+                    transition: 0.3s ease-in-out;
+                    & .subCatAnchor {
+                        font-size: 14px;
+                        color: $gray-900;
+                        transition: 0.3s ease-in-out;
+                        display: inline-block;
+                    }
+                    &::before {
+                        height: 6px;
+                        width: 6px;
+                        border-radius: 50%;
+                        background-color: $theme1;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: 0.3s ease-in-out;
+                    }
+                    &:hover {
+                        &::before {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                        & .subCatAnchor {
+                            color: $theme1;
+                            transform: translateX(15px);
+                        }
+                    }
+                }
+                & .subCategoryLi {
+                    color: $gray-900;
+                    cursor: pointer;
+                    font-size: 14px;
+                    padding: 12px 18px;
+                    border-radius: 4px;
+                    &.active {
+                        color: $theme1;
+                        background-color: lighten($theme1, 45);
+                    }
+                }
+                & .innerCatBox {
+                    display: none;
+                    &.active {
+                        display: flex !important;
+                    }
+                }
+                }
+
+                &:hover {
+                & .LinkAnchor {
+                    color: $theme1;
+                }
+                & .liHoverInnerBox {
+                    z-index: 1025;
+                    opacity: 1;
+                    visibility: visible;
+                }
+                }
+            }
+            &:hover {
+                & .LinkAnchor {
+                    color: $theme1;
+                }
+                & .liHoverBox {
+                    z-index: 1025;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    & .iconBox {
+        & .iconLi {
+            & .iconAnchor {
+                text-decoration: none;
+                border: 1px solid #65a147;
+                //   background: #65a147;
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                transition: all .5s ease-in-out;
+                & img {
+                    max-width: 100%;
+                    aspect-ratio: 10/10;
+                    object-fit: contain;
+                    transition: all .5s ease-in-out;
+                }
+                &:hover {
+                    background-color: $theme1;
+                    & img {
+                        filter: brightness(100);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobileMenuOffcanvas {
+  width: 300px !important;
+  & .offcanvas-header {
+      & .logo {
+          & img {
+              height: 45px;
+          }
+      }
+      & .closeBtn {
+          border: none !important;
+          background-color: transparent !important;
+          & img {
+              filter: brightness(0.5);
+              height: 12px;
+          }
+      }
   }
-
-  // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
-  @include media-breakpoint-up(sm) {}
-
-  @include media-breakpoint-up(md) {}
-
-  @include media-breakpoint-up(lg) {}
-
-  @include media-breakpoint-up(xl) {}
-
-  @include media-breakpoint-up(xxl) {}
-
-
-  @include media-breakpoint-down(xxl) {}
-
-  @include media-breakpoint-down(xl) {}
-
-  @include media-breakpoint-down(lg) {}
-
-  @include media-breakpoint-down(md) {}
-
-  @include media-breakpoint-down(sm) {}
-// }
-
-[data-bs-theme=dark] {
-  // & [data-page-name=example] {
-      @include dark-media-breakpoint(basic) {
-          
+  & .offcanvas-body {
+      & .mobMenuUl {
+          & .mobMenuLi {
+              & .mobMenuAnchor {
+                  color: $gray-600;
+                  font-size: 14px;
+                  font-weight: 400;
+                  text-decoration: none;
+                  padding: 0.75rem;
+                  &.mobMenuCollapseAnchor {
+                      background-repeat: no-repeat;
+                      background-position: right 0 top 13px;
+                      background-size: 14px;
+                      &.collapsed {
+                          background-image: url(../img/plusLightBlue.svg);
+                      }
+                      &:not(.collapsed) {
+                          background-image: url(../img/minusLightBlue.svg);
+                      }
+                  }
+              }
+          }
       }
-      // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
-      @include dark-media-breakpoint-up(sm) {
+      & .accordion {
+        & .accordion-item {
+          & .accordion-header {
+            & .accordion-button {
+              padding: 0.75rem;
+              color: $gray-600;
+              & .menuIcon {
+                height: 19px;
+              }
+              & .menuTitle {
+                font-size: 14px;
+                font-weight: 400;
+              }
+              & .menuArrow {
+                height: 12px;
+                transform: rotate(90deg);
+                transition: 0.3s ease-in-out;
+              }
+              &::after {
+                display: none;
+              }
+              &:not(.collapsed) {
+              color: $gray-600;
+                background-color: transparent;
+                box-shadow: none;
+                & .menuArrow {
+                  transform: rotate(-90deg);
+                }
+                &::after {
+                  display: none;
+                }
+              }
+            }
+          }
+          & .accordion-collapse {
+            & .accordion-body {
+              padding: 0 0.75rem;
+              & .innerMenuLinks {
+                & .innerMenuLink {
+                  & a {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $gray-600;
+                    padding: 0.4rem 0.5rem 0.4rem 1.75rem;
+                    border-radius: 4px;
+                    &::before {
+                      position: absolute;
+                      content: '';
+                      height: 5px;
+                      width: 5px;
+                      background-color: $gray-600;
+                      border-radius: 50px; 
+                      top: 50%;
+                      left: 0.75rem;
+                      transform: translateY(-50%);
+                    }
+                    &:hover {
+                      color: $gray-600;
+                      &::before {
+                          color: $gray-600;
+                      } 
+                    }
+                    &.active {
+                      background-color: lighten($theme1, 81);
+                      color: $gray-600;
+                      &::before {
+                        background-color: $gray-600;
+                      }  
+                    }
+                    }
+                }
+              }
+            }
+          }
+        }
       }
-      @include dark-media-breakpoint-up(md) {
+  }
+  & .offcanvas-footer {
+    & .footerLink {
+      & img {
+        width: 18px;
+        height: 18px;
       }
-      @include dark-media-breakpoint-up(lg) {
-      }
-      @include dark-media-breakpoint-up(xl) {
-      }
-      @include dark-media-breakpoint-up(xxl) {
-      }
-  
-  
-      @include dark-media-breakpoint-down(xxl) {
-      }
-      @include dark-media-breakpoint-down(xl) {
-      }
-      @include dark-media-breakpoint-down(lg) {
-      }
-      @include dark-media-breakpoint-down(md) {
-      }
-      @include dark-media-breakpoint-down(sm) {
-      }
-  // }
+    }
+  }
 }
 
-// ! @@@@@@@@@@@@@@@@@@@@@@[  example start  ]@@@@@@@@@@@@@@@@@@@@@@
-
-@include media-breakpoint(basic) {
-}
-@include media-breakpoint-down(xxl) {
-}
-@include media-breakpoint-down(xl) {
-}
-@include media-breakpoint-down(lg) {
-}
-@include media-breakpoint-down(md) {
-}
-@include media-breakpoint-down(sm) {
+// search offcanvas
+.searchOffcanvas {
+  height: 130px !important;
+  & .offcanvas-header {
+      & .title {
+          font-size: 16px;
+          font-weight: 500;
+          color: $gray-900;
+      }
+      & .closeBtn {
+          border: none !important;
+          background-color: transparent !important;
+          & img {
+              filter: brightness(0.5);
+              height: 12px;
+          }
+      }
+  }
+  & .offcanvas-body {
+      & .searchInput {
+          border: 1px solid $gray-300 !important;
+          font-size: 14px;
+          padding-right: 20px;
+          border-radius: 0 !important;
+          height: 42px;
+      }
+      & .searchBtn {
+          right: 0;
+          transform: translateY(-50%);
+          & img {
+              filter: brightness(0.5);
+              height: 16px;
+          }
+      }
+  }
 }

@@ -1,13 +1,163 @@
+.redButton {
+    background-color: $theme1;
+    font-size: 22px;
+    color: $white;
+    font-weight: 500;
+    padding: 12px 30px;
+    position: relative;
+    
+    height: fit-content;
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 24px;
+        background-color: rgba($color: $theme1, $alpha: 0.9);
+        transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: 1;
+        border-radius: 0.375rem;
+    }
+    &:hover {
+        color: $white !important;
+        z-index: 2;
+        &::before {
+            width: 100%;
+            z-index: -1;
+        }
+    }
+}
+.grayButton {
+    background-color: $theme3;
+    font-size: 22px;
+    color: $black;
+    font-weight: 500;
+    padding: 12px 30px;
+    position: relative;
 
-
-
-@include media-breakpoint-down(xxl) {}
-
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {
+    height: fit-content;
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 24px;
+        background-color: rgba($color: $theme3, $alpha: 0.9);
+        transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: 1;
+        border-radius: 0.375rem;
+    }
+    &:hover {
+        color: $white !important;
+        z-index: 2;
+        &::before {
+            width: 100%;
+            z-index: -1;
+        }
+    }
 }
 
-@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(xxl) {
+    .redButton {
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+    .grayButton {
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xl) {
+    .redButton {
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+    .grayButton {
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .redButton {
+        font-size: 18px;
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+    .grayButton {
+        font-size: 18px;
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .redButton {
+        font-size: 16px;
+        padding: 10px 24px;;
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+    .grayButton {
+        font-size: 16px;
+        padding: 10px 24px;;
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .redButton {
+        font-size: 14px;
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+    .grayButton {
+        font-size: 14px;
+        &::before {
+        }
+        &:hover {
+            &::before {
+            }
+        }
+    }
+}

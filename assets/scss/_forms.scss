@@ -1,6 +1,13 @@
 // ? @@@@@@@@@@@@@@@@@@@@@@[  forms start  ]@@@@@@@@@@@@@@@@@@@@@@
 @include media-breakpoint(basic) {
-  
+.form-control {
+    height: 50px;
+}
+textarea {
+  &.form-control {
+    height: auto;
+  }
+}
 }
 
 // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
