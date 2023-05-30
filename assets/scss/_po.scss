@@ -195,7 +195,7 @@
                             position: absolute;
                             bottom: 0;
                             right: 0;
-                            background-image: url(../img/bg/webDesign.jpg);
+                            background-image: url(../img/bg/webDesign\ \(2\).svg);
                             max-width: 265px;
                             max-height: 265px;
                             width: 100%;
@@ -652,7 +652,7 @@
                             // width: 100%;
                             // height: 100%;
                             background-color: $theme3;
-                            margin-left: -34px;
+                            margin-left: -35px;
                             &.active {
                                 background-color: $theme1;
                                 color: $white;
@@ -681,16 +681,29 @@
                 & .aboutServiceCardBody {
                     position: relative;
                     // overflow: hidden;
+                    transition: all .3s;
+                    border: 1px solid $theme1;
                     & .aboutServiceCardHeading {
                         font-size: 22px;
                         font-weight: 600;
                         text-transform: capitalize;
                     }
                     & .aboutServicecardPara {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                     & .aboutServiceCardButton {
                         
+                        & .aboutServiceCardImg {
+                            width: 15px;
+                            height: 15px;
+                            display: flex;
+                            margin-left: 5px;
+                            transition: all .5s ease-in-out;
+                            & img {
+                                aspect-ratio: 10/10;
+                                object-fit: contain;
+                            }
+                        }
                     }
                     & .aboutServiceCardIcon {
                         position: absolute;
@@ -706,6 +719,184 @@
                         justify-content: center;
                         padding: 22px;
                         transition: all 300ms ease;
+                        border: 1px solid $theme1;
+                        transition: all .3s ease-in-out;
+                        & img {
+                            aspect-ratio: 10/10;
+                            object-fit: contain;
+                            transition: all .3s;
+                        }
+                    }
+                    &:hover {
+                        box-shadow: 0px 0px 29px -10px rgb(101 161 71);
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                                transform: translateX(5px);
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            background-color: $theme1;
+                            & img {
+                                filter: brightness(100);
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                        font-size: 18px;
+                    }
+                    & .aboutServiceHeading {
+                        font-size: 44px;
+                        font-weight: 600;
+                        line-height: 1.2;
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        height: 100%;
+                        & .planType {
+                            & .planTypeHeader {
+                                text-transform: capitalize;
+                                font-size: 16px;
+                                font-weight: 600;
+                                & span {
+                                    color: $gray-700;
+                                    font-size: 16px;
+                                }
+                            }
+                            & .planOff {
+                                font-size: 16px;
+        
+                                & span {
+                                    font-size: 14px;
+                                    color: $gray-500
+                                }
+                            }
+                            & .planAmount {
+                                width: 22px;
+                                height: 22px;
+                                & .planAmountImg {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    aspect-ratio: 10/10;
+                                }
+                            }
+                            
+                            & .planAmountCount {
+                                color: $theme2;
+                                font-size: 26px;
+                            }
+                            & .planAmounPerMonth {
+                                font-size: 12px;
+                                color: $gray-700;
+                                font-weight: 600;
+                            }
+                            & .planList {
+        
+                                & .planListItem {
+                                    margin: 0;
+                                    padding: 0;
+                                    & .planListItems {
+                                        color: $gray-600;
+                                        font-size: 14px;
+                                        list-style: none;
+                                        padding-bottom: 10px;
+                                        padding-top: 10px;
+                                        border-bottom: 1px solid $gray-300;
+                                        position: relative;
+                                        &:last-child{
+                                            border-bottom: none !important;
+                                        }
+                                        &::before {
+                                            content: "";
+                                            background: url('../img/icons/check.png');
+                                            width: 10px;
+                                            height: 10px;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 0px;
+                                            transform: translate(0, -50%);
+                                            background-position: top center;
+                                            background-size: cover;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                                color: $theme1 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .companyLogoSection {
+            & .brand-wheel {
+                height: 100px;
+                & .brand-slide {
+                    flex-shrink: 0;
+                    animation-name: slidelogo;
+                    animation-duration: 10s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    transition: animation-play-state 1s;
+                    min-width: 100%;
+                    @keyframes slidelogo {
+                    from {
+                        transform: translateX(0%);
+                    }
+                    to {
+                        transform: translateX(-100%);
+                    }
+                    }
+                    &.delay {
+                    transform: translateX(100%);
+                    animation-name: slidelogo2;
+                    @keyframes slidelogo2 {
+                        from {
+                        transform: translateX(100%);
+                        }
+                        to {
+                        transform: translateX(0%);
+                        }
+                        }
+                    }
+                    & .logo-div {
+                    animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+                    // padding: 0 20px 0 20px;
+                    cursor: pointer;
+                    width: 100px;
+                    height: 100px;
+                        & img {
+                        object-fit: contain;
+                        object-position: center;
+                        aspect-ratio: 10/10;
+                        }
+                        @keyframes fade-in {
+                        0% {
+                            opacity: 0;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                        }
+                    }
+                }
+                &:hover {
+                    & .brand-slide {
+                    animation-play-state: paused;
                     }
                 }
             }
@@ -1007,6 +1198,92 @@
                 }
             }
         }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(md) {
@@ -1302,6 +1579,92 @@
                 }
             }
         }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(lg) {
@@ -1518,6 +1881,92 @@
                 & .copyrighttext {
                     & a {
 
+                    }
+                }
+            }
+        }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
                     }
                 }
             }
@@ -1817,6 +2266,92 @@
                 }
             }
         }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(xxl) {
@@ -2108,6 +2643,92 @@
                 & .copyrighttext {
                     & a {
 
+                    }
+                }
+            }
+        }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
                     }
                 }
             }
@@ -2404,6 +3025,92 @@
                 & .copyrighttext {
                     & a {
 
+                    }
+                }
+            }
+        }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
                     }
                 }
             }
@@ -2707,6 +3414,92 @@
                 }
             }
         }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(lg) {
@@ -3006,6 +3799,100 @@
                 & .copyrighttext {
                     & a {
 
+                    }
+                }
+            }
+        }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                    font-size: 16px;
+                }
+                & .aboutServiceHeading {
+                    font-size: 34px;
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                        font-size: 18px;
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        width: 60px;
+                        height: 60px;
+                        padding: 15px;
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                        font-size: 16px;
+                    }
+                    & .aboutServiceHeading {
+                        font-size: 34px;
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
                     }
                 }
             }
@@ -3328,6 +4215,100 @@
                 }
             }
         }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                    font-size: 24px;
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                        font-size: 14px;
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        top: 0;
+                        right: 50%;
+                        width: 60px;
+                        height: 60px;
+                        padding: 15px;
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                        font-size: 24px;
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(sm) {
@@ -3639,6 +4620,94 @@
                 & .copyrighttext {
                     & a {
 
+                    }
+                }
+            }
+        }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                }
+                & .aboutServiceHeading {
+                    font-size: 22px;
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    & .aboutServiceCardHeading {
+                    }
+                    & .aboutServicecardPara {
+                    }
+                    & .aboutServiceCardButton {
+                        
+                        & .aboutServiceCardImg {
+                            & img {
+                            }
+                        }
+                    }
+                    & .aboutServiceCardIcon {
+                        & img {
+                        }
+                    }
+                    &:hover {
+                        & .aboutServiceCardButton {
+                            & .aboutServiceCardImg {
+                            }
+                        }
+                        & .aboutServiceCardIcon {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .planSection {
+            & .planInner {
+                & .aboutServiceContentTitle {
+                    & .aboutServiceSubheading {
+                    }
+                    & .aboutServiceHeading {
+                        font-size: 22px;
+                    }
+                }
+                & .planItem {
+                    & .PlanItems {
+                        & .planType {
+                            & .planTypeHeader {
+                                & span {
+                                }
+                            }
+                            & .planOff {
+                                & span {
+                                }
+                            }
+                            & .planAmount {
+                                & .planAmountImg {
+                                }
+                            }
+                            & .planAmountCount {
+                            }
+                            & .planAmounPerMonth {
+                            }
+                            & .planList {
+                                & .planListItem {
+                                    & .planListItems {
+                                        &:last-child{
+                                        }
+                                        &::before {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        &:hover {
+                            & .planTypeHeader  {
+                            }
+                        }
                     }
                 }
             }
