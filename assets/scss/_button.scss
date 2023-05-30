@@ -21,7 +21,8 @@
     }
     &:hover {
         color: $white !important;
-        z-index: 2;
+        z-index: 1;
+        background-color: $theme1;
         &::before {
             width: 100%;
             z-index: -1;
@@ -31,7 +32,7 @@
 .grayButton {
     background-color: $theme3;
     font-size: 22px;
-    color: $black;
+    color: $white;
     font-weight: 500;
     padding: 12px 30px;
     position: relative;
@@ -51,6 +52,7 @@
     }
     &:hover {
         color: $white !important;
+        background-color: $theme3;
         z-index: 2;
         &::before {
             width: 100%;

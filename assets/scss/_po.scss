@@ -230,6 +230,14 @@
                         }
                     }
                     &.serviceCardRight {
+
+                        & .serviceCardImg2{
+
+                            &::before {
+                                background-image: url('../img/bg/SEO.svg');
+                                background-color: white;
+                            }
+                        }
                         &::after {
                         transform-origin: left bottom;
                         border-radius: 0 500px 0px 0px;
@@ -244,6 +252,8 @@
                             &::before {
                                 border-radius: 0  0 0 100%;
                                 top: 0 !important;
+                                background-image: url('../img/bg/socialMedia.svg');
+                                background-color: white;
                             }
                             & .serviceCardIcon {
                                 bottom: 20% !important;
@@ -261,6 +271,8 @@
                             &::before {
                                 border-radius: 0 0 0 100%;
                                 top: 0 !important;
+                                background-image: url('../img/bg/Development.svg');
+                                background-color: white;
                             }
                             & .serviceCardIcon {
                                 bottom: 20% !important;
@@ -431,7 +443,11 @@
                         }
                     
                         & .accordion-body {
-                        background-color: rgb($theme1, 0.06);
+                            background-color: rgb($theme1, 0.06);
+
+                            & .detailPara {
+                                font-size: 14px;
+                            }
                         }
                     }
                 } 
@@ -596,6 +612,100 @@
                     font-size: 16px;
                     & a {
 
+                    }
+                }
+            }
+        }
+
+        .breadCrumbNav {
+            & .breadCrumbInner {
+                & .breadCrumbItem {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    & .breadCrumbList {
+                        list-style: none;
+                        & .breadCrumbListNav {
+                            width: 50px;
+                            height: 50px;
+                            background: #5f5d5d;
+                            border-radius: 50%;
+                            padding: 14px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 2;
+                            overflow: hidden;
+
+                            & img {
+                                transition: all .3s ease-in-out;
+                            }
+
+                            &:hover {
+                                & img {
+                                    transform: scale(110%);
+                                }
+                            }
+                        }   
+                        & .breadCrumbOuter {
+                            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                            // width: 100%;
+                            // height: 100%;
+                            background-color: $theme3;
+                            margin-left: -34px;
+                            &.active {
+                                background-color: $theme1;
+                                color: $white;
+                            }
+                        }
+                        &:first-child {
+                            margin-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .aboutService {
+            & .aboutServiceContentTitle {
+                & .aboutServiceSubheading {
+                    font-size: 18px;
+                }
+                & .aboutServiceHeading {
+                    font-size: 44px;
+                    font-weight: 600;
+                    line-height: 1.2;
+                }
+            }
+            & .aboutServiceCard {
+                & .aboutServiceCardBody {
+                    position: relative;
+                    // overflow: hidden;
+                    & .aboutServiceCardHeading {
+                        font-size: 22px;
+                        font-weight: 600;
+                        text-transform: capitalize;
+                    }
+                    & .aboutServicecardPara {
+                        font-size: 16px;
+                    }
+                    & .aboutServiceCardButton {
+                        
+                    }
+                    & .aboutServiceCardIcon {
+                        position: absolute;
+                        top: 0%;
+                        right: 0%;
+                        transform: translate(50%,-50%);
+                        width: 80px;
+                        height: 80px;
+                        background-color: $white;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 22px;
+                        transition: all 300ms ease;
                     }
                 }
             }
@@ -807,6 +917,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -1100,6 +1212,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -1318,6 +1432,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -1611,6 +1727,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -1904,6 +2022,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -2198,6 +2318,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -2495,6 +2617,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -2795,6 +2919,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -3105,6 +3231,8 @@
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
@@ -3399,17 +3527,28 @@
                 & .faqItem {
                     & .accordion-item  {
                         & .accordion-button{
+                            font-size: 14px;
+                            padding: 12px 15px;
                             &:hover {
                             }
                             &:not(.collapsed){
                             }
                             &::after {
+                                width: 14px;
+                                height: 14px;
+                                background-position: center;
+                                background-size: contain;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
                             }
                             &:not(.collapsed){
                             }
                         }
                     }
                     & .accordion-body {
+                        & .detailPara {
+                        }
                     }
                 } 
             }
