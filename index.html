@@ -1066,6 +1066,17 @@
         <script src="assets/libs/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
         <script src="assets/js/index.js"></script>
         <script>
+            var bodyScrollPart = document.querySelector('.bodyScrollPart')
+            $(bodyScrollPart).scroll(function() {
+                if ($(this).scrollTop() > 66){  
+                    $('.Header').addClass("contentFixed");
+                }
+                else{
+                    $('.Header').removeClass("contentFixed");
+                }
+            });
+        </script>
+        <script>
             $('.owlTestimonial').owlCarousel({
                 loop:true,
                 margin:10,

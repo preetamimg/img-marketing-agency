@@ -2,6 +2,7 @@
 // [data-page-name=example] {
     @include media-breakpoint(basic) {
         .heroSection {
+            margin-top: 66px;
             background-image: url('../img/bg/banner.jpg');
             // width: 100%;
             // height: 100%;
@@ -615,6 +616,7 @@
         }
 
         .breadCrumbNav {
+            margin-top: 70px;
             & .breadCrumbInner {
                 & .breadCrumbItem {
                     margin: 0;
@@ -1258,7 +1260,7 @@
                 }
                 & .serviceDetailRight{
                     position: sticky;
-                    top: 0;
+                    top: 66px;
                     & .serviceDetailRightProfile {
                         border: 2px solid $theme1;
                         width: 150px;
