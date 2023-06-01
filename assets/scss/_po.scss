@@ -493,6 +493,7 @@
             & .footerInner {
                 & .logoFooter {
                     width: 100px;
+                    display: flex;
                     & img {
                         aspect-ratio: 10/10;
                         object-fit: cover;
