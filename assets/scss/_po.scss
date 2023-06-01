@@ -417,29 +417,25 @@
                     & .accordion-item  {
                         border: 1px solid $white;
                         & .accordion-button{
-                        color: $black;
-                        font-size: 16px;
-                        text-transform: capitalize;
-                        font-weight: 600;
-                        &:hover {
-                            color: $theme1;
-                        }
-                        &:not(.collapsed){
-                            background-color: transparent;
-                        }
-                    
-                        &::after {
-                            background-image: url('../img/icons/upArrow.svg');
-                            transform: rotate(360deg);
-                    
-                        }
-                    
-                        &:not(.collapsed){
-                            &::after {
-                            background-image: url('../img/icons/upArrow.svg');
-                            transform: rotate(180deg);
+                            color: $black;
+                            font-size: 16px;
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            &:hover {
+                                color: $theme1;
                             }
-                        }
+                            &::after {
+                                background-image: url('../img/icons/upArrow.svg');
+                                // transform: rotate(360deg) !important;
+                            }
+                            
+                            &:not(.collapsed){
+                                background-color: transparent;
+                                &::after {
+                                background-image: url('../img/icons/upArrow.svg');
+                                // transform: rotate(-180deg) !important;
+                                }
+                            }
                         }
                     
                         & .accordion-body {
@@ -648,11 +644,12 @@
                             }
                         }   
                         & .breadCrumbOuter {
-                            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-                            // width: 100%;
-                            // height: 100%;
+                            border-radius: 0px 20px 20px 0px;
+                            z-index: 1;
+                            position: relative;
                             background-color: $theme3;
                             margin-left: -35px;
+                            color: $white;
                             &.active {
                                 background-color: $theme1;
                                 color: $white;
@@ -660,6 +657,9 @@
                         }
                         &:first-child {
                             margin-left: 0px;
+                        }
+                        &:last-child {
+                            z-index: 0;
                         }
                     }
                 }
@@ -760,6 +760,7 @@
                 }
                 & .planItem {
                     & .PlanItems {
+                        transition: all .5s ease-in-out;
                         height: 100%;
                         & .planType {
                             & .planTypeHeader {
@@ -833,6 +834,7 @@
                         }
     
                         &:hover {
+                            transform: translateY(-20px);
                             & .planTypeHeader  {
                                 color: $theme1 !important;
                             }
@@ -898,6 +900,330 @@
                     & .brand-slide {
                     animation-play-state: paused;
                     }
+                }
+            }
+        }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    transition: all .5s ease-in-out;
+                    & .serviceCardHeader{
+                        position: relative;
+                        border-radius: 1rem 1rem 0px 0px;
+                        &.serviceCardHeaderBg1 {
+                            background-color: #f34965;
+                        }
+                        &.serviceCardHeaderBg2 {
+                            background-color: #c5c5e8;
+                        }
+                        &.serviceCardHeaderBg3 {
+                            background-color: #fcf0b9;
+                        }
+                        &.serviceCardHeaderBg4 {
+                            background-color: #f05850;
+                        }
+                        &.serviceCardHeaderBg5 {
+                            background-color: #7f8080;
+                        }
+                        &.serviceCardHeaderBg6   {
+                            background-color: #f34965;
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                                font-size: 16px;
+                            }
+                            & .serviceCardPara {
+                                font-size: 13px;
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            position: relative;
+                            & .serviceCardImg {
+                                width: 140px;
+                                max-width: 100%;
+                                position: relative;
+                                z-index: 1;
+                                animation: imgrotate 5s linear infinite;
+                                & img {
+                                    aspect-ratio: 10/10;
+                                    object-fit: contain;
+                                }
+
+                            }
+                            @keyframes imgrotate {
+                                0%{
+                                    transform: rotate(0deg);
+                                    }
+                                100%{
+                                    transform: rotate(360deg);
+                                    }
+                            }
+                            &::before {
+                                content: "";
+                                width: 90%;
+                                height: 90%;
+                                position: absolute;
+                                background-color: #ffffff30;
+                                border-radius: 100%;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
+                            }
+                        }
+                        &::before {
+                            content: "";
+                            border: 10px solid rgba(0,0,0,0);
+                            border-bottom: 10px solid #ffffff;
+                            position: absolute;
+                            bottom: 0;
+                            left: 30px;
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    width: 15px;
+                                    height: 15px;
+                                    display: flex;
+                                    margin-left: 5px;
+                                    transition: all .5s ease-in-out;
+                                    & img {
+                                        aspect-ratio: 10/10;
+                                        object-fit: contain;
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                        transform: translateX(5px);
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                                background-color: $theme3;
+                                color: $black;
+                                padding: 8px 15px;
+                                border-radius: 8px;
+                                font-size: 12px;
+                                font-weight: 500;
+                            }   
+                        }
+                    }
+                    &:hover {
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
+
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            height: 450px;
+                            & img {
+                                aspect-ratio: 10/10;
+                                object-fit: cover;
+                                border-radius: 12px;
+                            }
+
+                            & .itemContent {
+                                position: absolute;
+                                bottom: 0px;
+                                // left: 50%;
+                                width: 100%;
+                                margin: auto;
+                                background: #1a1a1a6b;
+                                border-radius: 0px 0px 12px 12px;
+                                // transform: translate(-50%,0);
+                                & .itemcontentTitle {
+                                    font-size: 12px;
+                                    background-color: $theme1;
+                                    padding: 3px 15px;
+                                    color: #fff;
+                                    border-radius: 12px;
+                                    display: inline-flex;
+                                }
+                                & .itemContentHeading {
+                                    font-size: 22px;
+                                    color: $white;
+                                    font-weight: 600;
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        padding: 0;
+                                        margin: 0;
+                                        display: flex;
+                                        column-gap: 20px;
+                                        & .itemPostLists {
+                                            display: flex;
+                                            list-style: none;
+                                            color: $white;
+                                            font-size: 14px;
+                                            align-items: center;
+                                            & .itemPostListProfile {
+                                                min-width: 30px;
+                                                height: 30px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                margin-right: 10px;
+                                                border-radius: 100%;
+                                                padding: 2px;
+                                                background: lighten($color: $theme3, $amount: 4);
+                                                & img {
+                                                    aspect-ratio: 10/10;
+                                                    object-fit: contain;
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                min-width: 30px;
+                                                height: 20px;
+                                                margin-right: 3px;
+                                                & img {
+                                                    aspect-ratio: 10/10;
+                                                    object-fit: contain;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            display: flex;
+                            position: absolute;
+                            top: 50%;
+                            transform: translate(0,-50%);
+                            justify-content: space-between;
+                            width: 100%;
+                            padding: 0 25px;
+                            & button {
+                                background-color: $white;
+                                border-radius: 12px;
+                                padding: 10px !important;
+                                width: 40px;
+                                height: 40px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 1px solid $theme1;
+                                & img {
+                                    aspect-ratio: 10/10;
+                                    object-fit: contain;
+                                    // filter: brightness(100);
+                                    transition: all 0.1s;
+                                }
+                                &.owl-prev {
+                                    transition: all .5s ease-in-out;
+                                }
+                                &.owl-next {
+                                    right: 0;
+                                    transition: all .5s ease-in-out;
+                                }
+                                &:hover {
+                                    border-radius: 100%;
+                                    & img {
+                                        filter: brightness(100);
+                                    }
+                                    &.owl-prev {
+                                        background-color: $theme1;
+                                    }
+                                    &.owl-next {
+                                        background-color: $theme1;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                    transform: translateX(-10px);
+                                }
+                                & .owl-next {
+                                    transform: translateX(10px);
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+
+                        }
+                        & .serviceCommentBox {
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    width: 50px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 100%;
+                                    padding: 2px;
+                                    border: 4px solid $theme3;
+                                    & img {
+                                        border-radius: 100%;
+                                        aspect-ratio: 10/10;
+                                        object-fit: contain;
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                    text-transform: capitalize;
+                                }
+                                & .servieCommentReply {
+
+                                }
+                            }
+                            & .serviceCommentPara {
+
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    margin: 0;
+                                    padding: 0;
+                                    display: flex;
+                                    & .serviceCommentReactionItems {
+                                        list-style: none;
+                                        border-right: 1px solid $black;
+                                        padding: 0px 10px;
+                                        display: flex;
+                                        font-size: 12px;
+                                        &:last-child {
+                                            border-right: 0px;
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            min-width: 20px;
+                                            height: 20px;
+                                            margin-right: 6px;
+                                            
+                                            & img {
+                                                aspect-ratio: 10/10;
+                                                object-fit: contain;
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+
                 }
             }
         }
@@ -1284,6 +1610,66 @@
                 }
             }
         }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(md) {
@@ -1665,6 +2051,66 @@
                 }
             }
         }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(lg) {
@@ -1967,6 +2413,66 @@
                             & .planTypeHeader  {
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
                     }
                 }
             }
@@ -2352,6 +2858,66 @@
                 }
             }
         }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(xxl) {
@@ -2729,6 +3295,66 @@
                             & .planTypeHeader  {
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
                     }
                 }
             }
@@ -3115,6 +3741,66 @@
                 }
             }
         }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(xl) {
@@ -3496,6 +4182,66 @@
                             & .planTypeHeader  {
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
                     }
                 }
             }
@@ -3893,6 +4639,66 @@
                             & .planTypeHeader  {
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
                     }
                 }
             }
@@ -4309,6 +5115,74 @@
                 }
             }
         }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                                font-size: 14px;
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                width: 120px;
+                                margin: auto;
+                                & img {
+                                }
+
+                            }
+                            
+                            &::before {
+                                width: 90px;
+                                height: 90px;
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+                            font-size: 14px;
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                font-size: 14px;
+                                & .aboutServiceCardImg {
+                                    width: 12px;
+                                    height: 12px;
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                            }   
+                        }
+                    }
+                    &:hover {
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(sm) {
@@ -4708,6 +5582,68 @@
                             & .planTypeHeader  {
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .serviceCardSection {
+            & .serviceCardInner {
+                & .serviceCardBody {
+                    & .serviceCardHeader{
+                        &.serviceCardHeaderBg1 {
+                        }
+                        &.serviceCardHeaderBg2 {
+                        }
+                        &.serviceCardHeaderBg3 {
+                        }
+                        &.serviceCardHeaderBg4 {
+                        }
+                        &.serviceCardHeaderBg5 {
+                        }
+                        &.serviceCardHeaderBg6   {
+                        }
+                        & .HeaderContent {
+                            & .serviceCardHeading {
+                            }
+                            & .serviceCardPara {
+                            }
+                        }
+                        & .serviceCardBgImg {
+                            & .serviceCardImg {
+                                & img {
+                                }
+
+                            }
+                            &::before {
+                            }
+                        }
+                        &::before {
+                        }
+                    }
+                    & .serviceCardFooter {
+                        & .Footerpara {
+
+                        }
+                        & .footerButton {
+                            & .serviceCardReadButton {
+                                & .aboutServiceCardImg {
+                                    & img {
+                                    }
+                                }
+                                &:hover {
+                                    & .aboutServiceCardImg {
+                                    }
+                                }
+                            }
+                            & .serviceCardDays {
+                                padding: 6px 12px;
+                                border-radius: 8px;
+                                font-size: 10px;
+                            }   
+                        }
+                    }
+                    &:hover {
                     }
                 }
             }

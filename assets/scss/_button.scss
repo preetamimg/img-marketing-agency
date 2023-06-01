@@ -5,7 +5,7 @@
     font-weight: 500;
     padding: 12px 30px;
     position: relative;
-    
+    z-index: 2;
     height: fit-content;
     &::before {
         position: absolute;
@@ -15,17 +15,17 @@
         height: 100%;
         width: 24px;
         background-color: rgba($color: $theme1, $alpha: 0.9);
-        transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-        z-index: 1;
+        transition:0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
         border-radius: 0.375rem;
     }
     &:hover {
         color: $white !important;
-        z-index: 1;
+        // z-index: 2;
         background-color: $theme1;
         &::before {
             width: 100%;
-            z-index: -1;
+            // z-index: -1;
         }
     }
 }
@@ -36,7 +36,7 @@
     font-weight: 500;
     padding: 12px 30px;
     position: relative;
-
+    z-index: 2;
     height: fit-content;
     &::before {
         position: absolute;
@@ -47,16 +47,16 @@
         width: 24px;
         background-color: rgba($color: $theme3, $alpha: 0.9);
         transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-        z-index: 1;
+        z-index: -1;
         border-radius: 0.375rem;
     }
     &:hover {
         color: $white !important;
         background-color: $theme3;
-        z-index: 2;
+        // z-index: 2;
         &::before {
             width: 100%;
-            z-index: -1;
+            // z-index: -1;
         }
     }
 }
