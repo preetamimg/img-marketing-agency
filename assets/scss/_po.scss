@@ -813,20 +813,19 @@
                                         padding-top: 10px;
                                         border-bottom: 1px solid $gray-300;
                                         position: relative;
+                                        display: flex;
+                                        align-items: center;
+                                        & .planListItemsImg {
+                                            width: 20px;
+                                            height: 20px;
+                                            margin-right: 8px;
+                                            & img {
+                                                aspect-ratio: 10/10;
+                                                object-fit: contain;
+                                            }
+                                        }
                                         &:last-child{
                                             border-bottom: none !important;
-                                        }
-                                        &::before {
-                                            content: "";
-                                            background: url('../img/icons/check.png');
-                                            width: 10px;
-                                            height: 10px;
-                                            position: absolute;
-                                            top: 50%;
-                                            left: 0px;
-                                            transform: translate(0, -50%);
-                                            background-position: top center;
-                                            background-size: cover;
                                         }
                                     }
                                 }
@@ -918,7 +917,7 @@
                             background-color: #c5c5e8;
                         }
                         &.serviceCardHeaderBg3 {
-                            background-color: #fcf0b9;
+                            background-color: #fea41c;
                         }
                         &.serviceCardHeaderBg4 {
                             background-color: #f05850;
@@ -944,7 +943,7 @@
                                 max-width: 100%;
                                 position: relative;
                                 z-index: 1;
-                                animation: imgrotate 5s linear infinite;
+                                // animation: imgrotate 5s linear infinite;
                                 & img {
                                     aspect-ratio: 10/10;
                                     object-fit: contain;
@@ -981,6 +980,7 @@
                         }
                     }
                     & .serviceCardFooter {
+                        
                         & .Footerpara {
 
                         }
@@ -1010,11 +1010,20 @@
                                 border-radius: 8px;
                                 font-size: 12px;
                                 font-weight: 500;
+                                transition: all .3s ease-in-out;
                             }   
                         }
                     }
                     &:hover {
                         transform: translateY(-10px);
+                        & .serviceCardFooter {
+                            & .footerButton {
+                                & .serviceCardDays {
+                                    color:$white;
+                                    background-color: $theme1;
+                                }
+                            }
+                        }
                     }
                 }
             }
