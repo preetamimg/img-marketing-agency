@@ -1392,8 +1392,8 @@
             }
         }
 
-        .contactSection {
-            & .contactInner {
+        .contactUsSection {
+            & .contactUsInner {
                 & .contactContent {
                     & .sectionHeading {
                         & .mainHeading {
@@ -1406,26 +1406,37 @@
                             font-weight: normal;
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-            
-                        }
-            
-                        & .aboutOfficeImg {
-                            height: 300px;
-            
-                            & .Img {
-                                object-fit: cover;
-                                // object-position: top center;
-                                width: 100%;
-                                height: 100%;
+                    & .contactAbout {
+                        & .contactDetailsBg {
+                            padding: 22px 0px;
+                            border-radius: 8px;
+                            background-color: $gray-100;
+                
+                            & .contactDetailsIcon {
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 100%;
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translate(-50%, -50%);
+                                z-index: 2;
+                                background: $white;
                             }
-                        }
-                        
-                        & .aboutOfficePara {
-                            font-size: 14px;
+                
+                            & .contactDetailsHeading {
+                                color: $theme1;
+                                font-size: 16px;
+                                font-weight: 500;
+                                text-transform: capitalize;
+                                // text-align: center;
+                            }
+                            & .contactDetailsPara {
+                                font-size: 14px;
                             color: $gray-600;
                             font-weight: normal;
+                            // text-align: center;
+                            }
                         }
                     }
             
@@ -2299,18 +2310,8 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
-            
-                        & .aboutOfficeImg {
-            
-                            & .Img {
-                            }
-                        }
-                        
-                        & .aboutOfficePara {
-                        }
+                    & .contactAbout {
+
                     }
             
                 }
@@ -2951,17 +2952,16 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
+                    & .contactAbout {
+                        & .contactDetailsBg {
             
-                        & .aboutOfficeImg {
-            
-                            & .Img {
+                            & .contactDetailsIcon {
                             }
-                        }
-                        
-                        & .aboutOfficePara {
+                
+                            & .contactDetailsHeading {
+                            }
+                            & .contactDetailsPara {
+                            }
                         }
                     }
             
@@ -3528,18 +3528,8 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
-            
-                        & .aboutOfficeImg {
-            
-                            & .Img {
-                            }
-                        }
-                        
-                        & .aboutOfficePara {
-                        }
+                    & .contactAbout {
+
                     }
             
                 }
@@ -4180,18 +4170,8 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
-            
-                        & .aboutOfficeImg {
-            
-                            & .Img {
-                            }
-                        }
-                        
-                        & .aboutOfficePara {
-                        }
+                    & .contactAbout {
+
                     }
             
                 }
@@ -4832,18 +4812,8 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
-            
-                        & .aboutOfficeImg {
-            
-                            & .Img {
-                            }
-                        }
-                        
-                        & .aboutOfficePara {
-                        }
+                    & .contactAbout {
+
                     }
             
                 }
@@ -5485,18 +5455,8 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
-            
-                        & .aboutOfficeImg {
-            
-                            & .Img {
-                            }
-                        }
-                        
-                        & .aboutOfficePara {
-                        }
+                    & .contactAbout {
+
                     }
             
                 }
@@ -6143,17 +6103,16 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
+                    & .contactAbout {
+                        & .contactDetailsBg {
             
-                        & .aboutOfficeImg {
-            
-                            & .Img {
+                            & .contactDetailsIcon {
                             }
-                        }
-                        
-                        & .aboutOfficePara {
+                
+                            & .contactDetailsHeading {
+                            }
+                            & .contactDetailsPara {
+                            }
                         }
                     }
             
@@ -6820,17 +6779,16 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                        }
+                    & .contactAbout {
+                        & .contactDetailsBg {
             
-                        & .aboutOfficeImg {
-            
-                            & .Img {
+                            & .contactDetailsIcon {
                             }
-                        }
-                        
-                        & .aboutOfficePara {
+                
+                            & .contactDetailsHeading {
+                            }
+                            & .contactDetailsPara {
+                            }
                         }
                     }
             
@@ -7512,8 +7470,8 @@
             }
         }
         
-        .contactSection {
-            & .contactInner {
+        .contactUsSection {
+            & .contactUsInner {
                 & .contactContent {
                     & .sectionHeading {
                         & .mainHeading {
@@ -7524,19 +7482,22 @@
                         font-size: 12px
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
-                            font-size: 14px;
-                        }
+                    & .contactAbout {
+                        & .contactDetailsBg {
             
-                        & .aboutOfficeImg {
-            
-                            & .Img {
+                            & .contactDetailsIcon {
+                                left: 10px;
+                                transform: translate(0%, -50%);
                             }
-                        }
-                        
-                        & .aboutOfficePara {
-                            font-size: 12px
+                
+                            & .contactDetailsHeading {
+                                text-align: left;
+                                font-size: 14px
+                            }
+                            & .contactDetailsPara {
+                                font-size: 12px;
+                                text-align: start;
+                            }
                         }
                     }
             
@@ -8255,18 +8216,23 @@
                     & .subheading {
                     }
             
-                    & .aboutOffice {
-                        & .detailHeading {
+                    & .contactAbout {
+                        & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                            position: inherit;
+                            margin-top: inherit !important;
+                            transform: inherit;
                         }
             
-                        & .aboutOfficeImg {
-            
-                            & .Img {
-                            }
+                        & .contactDetailsHeading {
+                            text-align: left;
+                            font-size: 14px
                         }
-                        
-                        & .aboutOfficePara {
+                        & .contactDetailsPara {
+                            font-size: 12px
                         }
+                    }
                     }
             
                 }
