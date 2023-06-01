@@ -1024,7 +1024,9 @@
             & .serviceDetailInner {
                 & .serviceDetailLeft {
                     & .serviceDetailLeftHeading {
-
+                        font-size: 34px;
+                        font-weight: 600;
+                        color: $theme1;
                     }
                     & .owlServiceDetail {
                         & .item {
@@ -1154,11 +1156,22 @@
                             }
                         }
                     }
+                    
+                    & .serviceDetailPara {
+                        font-size: 16px;
+                        text-align: justify;
+                    }
                     & .serviceDetailComment {
                         & .seviceCommentheading {
-
+                            font-size: 24px;
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            color: $theme1;
                         }
                         & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                                border-radius: 0px 20px 20px 20px;
+                            }
                             & .serviceCommentprofile {
                                 & .serviceCommentProfileImg {
                                     width: 50px;
@@ -1171,7 +1184,7 @@
                                     & img {
                                         border-radius: 100%;
                                         aspect-ratio: 10/10;
-                                        object-fit: contain;
+                                        object-fit: cover;
                                     }
                                 }
                                 & .serviceCommentProfileName {
@@ -1180,11 +1193,11 @@
                                     text-transform: capitalize;
                                 }
                                 & .servieCommentReply {
-
+                                    font-size: 14px;
                                 }
                             }
                             & .serviceCommentPara {
-
+                                font-size: 14px;
                             }
                             & .serviceCommentReaction {
                                 & .serviceCommentReactionItem {
@@ -1221,14 +1234,165 @@
                             }
                         }
                     }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                            font-size: 24px;
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            color: $theme1;
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
                 }
                 & .serviceDetailRight{
-
+                    position: sticky;
+                    top: 0;
+                    & .serviceDetailRightProfile {
+                        border: 2px solid $theme1;
+                        width: 150px;
+                        height: 150px;
+                        padding: 20px;
+                        border-radius: 100%;
+                        margin: auto;
+                        & img {
+                            aspect-ratio: 10/10;
+                            object-fit: contain;
+                            border-radius: 100%;
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        text-align: center;
+                        padding: 0px 30px;
+                        & .serviceDetailRightProfilename {
+                            font-size: 22px;
+                            line-height: 24px;
+                            font-weight: 700;
+                        }
+                        & .serviceDetailRigtpara {
+                            margin: 10px 0px;
+                            font-size: 14px;
+                            color: lighten($color: $theme3, $amount: 5);
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                margin: auto;
+                                justify-content: center;
+                                & .serviceDetailSocialItems {
+                                    list-style: none;
+                                    padding-right: 10px;
+                                    & .serviceDetailSocialLink {
+                                        width: 30px;
+                                        height: 30px;
+                                        display: flex;
+                                        padding: 6px;
+                                        transition: all .5s ease-in-out;
+                                        border-radius: 50px;
+                                        & img {
+                                            aspect-ratio: 10/10;
+                                            object-fit: contain;
+                                        }
+                                        &:hover {
+                                            background-color: $white;
+                                            box-shadow: 5px 3px 13px 0px rgba(0, 0, 0, 0.12);
+                                        }
+                                    }
+                                    &:last-child {
+                                        padding-left: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                            font-size: 18px;
+                            text-align: center;
+                            line-height: 24px;
+                            color: $theme1;
+                            font-weight: 600;
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                width: 80px;
+                                height: 80px;
+                                display: flex;
+                                border-radius: 12px;
+                                & img {
+                                    aspect-ratio: 10/10;
+                                    object-fit: contain;
+                                    border-radius: 12px;
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                font-size: 14px;
+                                color: $black;
+                                font-weight: 600;
+                                line-height: 1.4;
+                                display: flex;
+                                &:hover {
+                                    color: $theme1;
+                                }
+                            }
+                            & .servicerecentPostDate {
+                                font-size: 14px;
+                                color: lighten($color: $theme3, $amount: 5);
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-wrap: wrap;
+                                row-gap: 15px;
+                                & .servicetagsItems {
+                                    list-style: none;
+                                    padding-right: 10px;
+                                    & .servicetagsLink {
+                                        font-size: 12px;
+                                        padding: 4px 10px;
+                                        border-radius: 4px;
+                                        color: $black;
+                                        background-color: lighten($color: $theme3, $amount: 15);
+                                        transition: all .3s ease-in-out;
+                                        &:hover {
+                                            color: $theme1;
+                                            background-color: $white;
+                                            box-shadow: 5px 3px 13px 0px rgba(0, 0, 0, 0.12);
+                                        }
+                                    }   
+                                    &:last-child {
+                                        padding-right: 0px;
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                width: 90px;
+                                height: 90px;
+                                max-width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                & img {
+                                    aspect-ratio: 10/10;
+                                    object-fit: cover;
+                                    border-radius: 12px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-
     }
+
 
     // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
     @include media-breakpoint-up(sm) {
@@ -1669,6 +1833,174 @@
                     }
                 }
             }
+        }
+        
+        .serviceDetailSection {
+        & .serviceDetailInner {
+            & .serviceDetailLeft {
+                & .serviceDetailLeftHeading {
+                }
+                & .owlServiceDetail {
+                    & .item {
+                        & img {
+                        }
+
+                        & .itemContent {
+                            & .itemcontentTitle {
+                            }
+                            & .itemContentHeading {
+                            }
+                            & .itemPost {
+                                & .itemPostList {
+                                    & .itemPostLists {
+                                        & .itemPostListProfile {
+                                            & img {
+                                            }
+                                        }
+                                        & .itemPostListIcon {
+                                            & img {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .owl-nav {
+                        & button {
+                            & img {
+                            }
+                            &.owl-prev {
+                            }
+                            &.owl-next {
+                            }
+                            &:hover {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .owl-nav {
+                            & .owl-prev {
+                            }
+                            & .owl-next {
+                            }
+                        }
+                    }
+                }
+                & .serviceDetailComment {
+                    & .seviceCommentheading {
+                    }
+                    & .serviceCommentBox {
+                        &.serviceCommentBoxReply {
+                        }
+                        & .serviceCommentprofile {
+                            & .serviceCommentProfileImg {
+                                & img {
+                                }
+                            }
+                            & .serviceCommentProfileName {
+                            }
+                            & .servieCommentReply {
+                            }
+                        }
+                        & .serviceCommentPara {
+                        }
+                        & .serviceCommentReaction {
+                            & .serviceCommentReactionItem {
+                                & .serviceCommentReactionItems {
+                                    &:last-child {
+                                    }
+
+                                    & .serviceCommentReactionEmoji {
+                                        
+                                        & img {
+                                        }
+                                    }
+                                    & .serviceCommentReactionItems {
+                                        & .serviceCommentAnswer {
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .serviceDetailform {
+                    & .serviceDetailFormHeading {
+                    }
+                    & .serviceDetailFormSection {
+
+                    }
+                }
+            }
+            & .serviceDetailRight{
+                & .serviceDetailRightProfile {
+                    & img {
+                    }
+                }
+                & .serviceDetailRightProfileContent {
+                    & .serviceDetailRightProfilename {
+                    }
+                    & .serviceDetailRigtpara {
+                    }
+                    & .serviceDetailRightSocial {
+                        & .serviceDetailSocialItem {
+                            & .serviceDetailSocialItems {
+                                & .serviceDetailSocialLink {
+                                    & img {
+                                    }
+                                    &:hover {
+                                    }
+                                }
+                                &:last-child {
+                                }
+                            }
+                        }
+                    }
+                }
+                & .serviceRecentPost {
+                    & .serviceRecentPostHeading {
+                    }
+                    & .serviceRecentPostDetail {
+                        & .serviceRecentPostImg {
+                            & img {
+                            }
+                        }
+                        & .serviceRecentPostPara {
+                            &:hover {
+                            }
+                        }
+                        & .servicerecentPostDate {
+                        }
+                    }
+                    & .serviceRecentPostTags {
+                        & .servicetagsItem {
+                            & .servicetagsItems {
+                                & .servicetagsLink {
+                                    &:hover {
+                                    }
+                                }   
+                                &:last-child {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPostGallery {
+                        & .servicePostGalleryImg {
+                            & img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
         }
     }
 
@@ -2111,6 +2443,174 @@
                 }
             }
         }
+
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(lg) {
@@ -2473,6 +2973,174 @@
                         }
                     }
                     &:hover {
+                    }
+                }
+            }
+        }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -2918,6 +3586,174 @@
                 }
             }
         }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(xxl) {
@@ -3355,6 +4191,174 @@
                         }
                     }
                     &:hover {
+                    }
+                }
+            }
+        }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -3801,6 +4805,174 @@
                 }
             }
         }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(xl) {
@@ -4242,6 +5414,176 @@
                         }
                     }
                     &:hover {
+                    }
+                }
+            }
+        }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                width: 88px;
+                                height: 88px;
+                                & img {
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -4699,6 +6041,183 @@
                         }
                     }
                     &:hover {
+                    }
+                }
+            }
+        }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                        font-size: 24px;
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                    font-size: 18px;
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                            font-size: 20px;
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                    font-size: 18px;
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                            font-size: 20px;
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        width: 130px;
+                        height: 130px;
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                            font-size: 18px;
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                            text-align: start;
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -5183,6 +6702,186 @@
                 }
             }
         }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                        font-size: 22px;
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            height: 350px;
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                    font-size: 16px;
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            & .itemPostListProfile {
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            & button {
+                                border-radius: 4px;
+                                padding: 10px !important;
+                                width: 30px;
+                                height: 30px;
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailPara {
+                        font-size: 14px;
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                            font-size: 18px;
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                            font-size: 18px;
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(sm) {
@@ -5499,6 +7198,40 @@
             }
         }
 
+        
+        .breadCrumbNav {
+            & .breadCrumbInner {
+                & .breadCrumbItem {
+                    & .breadCrumbList {
+                        & .breadCrumbListNav {
+                            width: 40px;
+                            height: 40px;
+                            background: #5f5d5d;
+                            border-radius: 50%;
+                            padding: 10px;
+                            & img {
+                            }
+
+                            &:hover {
+                                & img {
+                                }
+                            }
+                        }   
+                        & .breadCrumbOuter {
+                            font-size: 12px;
+                            margin-left: -14px;
+                            &.active {
+                            }
+                        }
+                        &:first-child {
+                        }
+                        &:last-child {
+                        }
+                    }
+                }
+            }
+        }
+
         .aboutService {
             & .aboutServiceContentTitle {
                 & .aboutServiceSubheading {
@@ -5644,6 +7377,188 @@
                         }
                     }
                     &:hover {
+                    }
+                }
+            }
+        }
+        
+        .serviceDetailSection {
+            & .serviceDetailInner {
+                & .serviceDetailLeft {
+                    & .serviceDetailLeftHeading {
+                        font-size: 20px;
+                    }
+                    & .owlServiceDetail {
+                        & .item {
+                            // height: 250px;
+                            & img {
+                            }
+
+                            & .itemContent {
+                                & .itemcontentTitle {
+                                }
+                                & .itemContentHeading {
+                                    font-size: 14px;
+                                }
+                                & .itemPost {
+                                    & .itemPostList {
+                                        & .itemPostLists {
+                                            font-size: 12px;
+                                            & .itemPostListProfile {
+                                                min-width: 20px;
+                                                height: 20px;
+                                                & img {
+                                                }
+                                            }
+                                            & .itemPostListIcon {
+                                                min-width: 20px;
+                                                height: 15px;
+                                                margin-right: 1px;
+                                                & img {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & .owl-nav {
+                            display: none;
+                            & button {
+                                & img {
+                                }
+                                &.owl-prev {
+                                }
+                                &.owl-next {
+                                }
+                                &:hover {
+                                    & img {
+                                    }
+                                    &.owl-prev {
+                                    }
+                                    &.owl-next {
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & .owl-nav {
+                                & .owl-prev {
+                                }
+                                & .owl-next {
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailComment {
+                        & .seviceCommentheading {
+                        }
+                        & .serviceCommentBox {
+                            &.serviceCommentBoxReply {
+                            }
+                            & .serviceCommentprofile {
+                                & .serviceCommentProfileImg {
+                                    width: 40px;
+                                    & img {
+                                    }
+                                }
+                                & .serviceCommentProfileName {
+                                    font-size: 16px;
+                                }
+                                & .servieCommentReply {
+                                }
+                            }
+                            & .serviceCommentPara {
+                                font-size: 12px;
+                            }
+                            & .serviceCommentReaction {
+                                & .serviceCommentReactionItem {
+                                    & .serviceCommentReactionItems {
+                                        &:last-child {
+                                        }
+
+                                        & .serviceCommentReactionEmoji {
+                                            min-width: 15px;
+                                            height: 15px;
+                                            & img {
+                                            }
+                                        }
+                                        & .serviceCommentReactionItems {
+                                            & .serviceCommentAnswer {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceDetailform {
+                        & .serviceDetailFormHeading {
+                        }
+                        & .serviceDetailFormSection {
+
+                        }
+                    }
+                }
+                & .serviceDetailRight{
+                    & .serviceDetailRightProfile {
+                        & img {
+                        }
+                    }
+                    & .serviceDetailRightProfileContent {
+                        & .serviceDetailRightProfilename {
+                        }
+                        & .serviceDetailRigtpara {
+                        }
+                        & .serviceDetailRightSocial {
+                            & .serviceDetailSocialItem {
+                                & .serviceDetailSocialItems {
+                                    & .serviceDetailSocialLink {
+                                        & img {
+                                        }
+                                        &:hover {
+                                        }
+                                    }
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .serviceRecentPost {
+                        & .serviceRecentPostHeading {
+                        }
+                        & .serviceRecentPostDetail {
+                            & .serviceRecentPostImg {
+                                & img {
+                                }
+                            }
+                            & .serviceRecentPostPara {
+                                &:hover {
+                                }
+                            }
+                            & .servicerecentPostDate {
+                            }
+                        }
+                        & .serviceRecentPostTags {
+                            & .servicetagsItem {
+                                & .servicetagsItems {
+                                    & .servicetagsLink {
+                                        &:hover {
+                                        }
+                                    }   
+                                    &:last-child {
+                                    }
+                                }
+                            }
+                        }
+                        & .serviceRecentPostGallery {
+                            & .servicePostGalleryImg {
+                                & img {
+                                }
+                            }
+                        }
                     }
                 }
             }
