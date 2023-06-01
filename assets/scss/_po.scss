@@ -1391,6 +1391,292 @@
                 }
             }
         }
+
+        .contactSection {
+            & .contactInner {
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+            
+                        }
+                    }
+                    & .subheading {
+                        font-size: 14px;
+                            color: $gray-600;
+                            font-weight: normal;
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+            
+                        }
+            
+                        & .aboutOfficeImg {
+                            height: 300px;
+            
+                            & .Img {
+                                object-fit: cover;
+                                // object-position: top center;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                            font-size: 14px;
+                            color: $gray-600;
+                            font-weight: normal;
+                        }
+                    }
+            
+                }
+                & .contactForm {
+                    & .formBg {
+                        background-color: $white;
+                        & .FormTitle {
+                            & .formTitleHeading {
+                                font-size: 26px;
+                                text-align: center;
+                                color: $theme2;
+                                font-weight: 700;
+                                text-transform: capitalize;
+                            }
+                            & .formTitlePara {
+                                font-size: 16px;
+                                font-weight: 400;
+                                text-align: center;
+                            }
+                        }
+                        & .form {
+                            padding: 0px 15px;
+                            & .form-label {
+                                font-size: 12px;
+                                margin-bottom: 10px;
+                            }
+                            & .form-control, & .form-select {
+                                border-color: $white !important;
+                                padding: .75rem 35px .75rem 1rem;
+                            }
+                    
+                            & .formTextArea {
+                                height: fit-content;
+                                border-radius: 10px;
+                                
+                            }
+                    
+                            & .inputIcon {
+                                right: 15px;
+                                transform: translate(0,-50%);
+                                width: 16px;
+                                height: 16px;
+                                & .inputIconImg {
+                                    aspect-ratio: 10/10;
+                                    object-fit: cover;
+                                }
+                            }
+                    
+                            & .formCheck {
+                                & .formCheckInput {
+                                    
+                                    &:checked {
+                                        & ~  .formCheckButton {
+                                            // background-color: rgb($theme1, 0.5);
+                                            background-color: $theme1;
+                                            color: $white;
+                                        }
+                                    }
+                                }
+                                & .formCheckButton {
+                                    border: 1px solid $theme1;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    text-transform: capitalize;
+                                    padding: 5px 12px 5px 40px;
+                                    cursor: pointer;
+                                }
+                            }
+                    
+                            & .formRadio {
+                                & .formradioInput {
+                                    left: 35px;
+                                    top: 41%;
+                                    transform: translate(0,-50%);
+                                    &:checked {
+                                        & ~  .formRadioButton {
+                                            // background-color: rgb($theme1, 0.5);
+                                            box-shadow:3px 3px 11px -5px $theme1;
+                                        }
+                                    }
+                                }
+                                & .formRadioButton {
+                                    border: 2px solid $theme1;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    text-transform: capitalize;
+                                    padding: 5px 12px 5px 40px;
+                                    cursor: pointer;
+                    
+                                }
+                            }
+                    
+                            & .switches-container {
+                                width: 150px;
+                                height: 36px;
+                                position: relative;
+                                display: flex;
+                                padding: 0;
+                                position: relative;
+                                background: $gray-300;
+                                line-height: 3rem;
+                                border-radius: 3rem;
+                                margin-left: auto;
+                                margin-right: auto;
+                                & input {
+                                    visibility: hidden;
+                                    position: absolute;
+                                    top: 0;
+                    
+                                    &:nth-of-type(1) {
+                                        &:checked {
+                                            &~.switch-wrapper {
+                                                transform: translateX(0%);
+                                                & .switch {
+                                                    & div {
+                                                        &:nth-of-type(1){
+                                                            opacity: 1
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &:nth-of-type(2) {
+                                        &:checked {
+                                            &~.switch-wrapper {
+                                                transform: translateX(100%);
+                                                & .switch {
+                                                    & div {
+                                                        &:nth-of-type(2){
+                                                            opacity: 1
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                & label {
+                                    width: 50%;
+                                    padding: 0;
+                                    margin: 0;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    color: $theme1;
+                                    font-weight: 600;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-size: 12px;
+                                }
+                                & .switch-wrapper {
+                                    position: absolute;
+                                    top: 0;
+                                    bottom: 0;
+                                    width: 50%;
+                                    padding: 0.15rem;
+                                    z-index: 3;
+                                    transition: transform .5s cubic-bezier(.77, 0, .175, 1);
+                                    /* transition: transform 1s; */
+                    
+                                    & .switch {
+                                        border-radius: 3rem;
+                                        background: $theme1;
+                                        height: 100%;    
+                                        width: 70px;
+                                        position: relative;
+                    
+                                        & div {
+                                            text-align: center;
+                                            opacity: 0;
+                                            display: flex;
+                                            color: $white;
+                                            transition: opacity .2s cubic-bezier(0.77, 0, 0.175, 1) .125s;
+                                            will-change: opacity;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            font-size: 12px;
+                                            transform: translate(-50%,-50%);
+                    
+                                        }
+                                    }
+                                }
+                            }
+                    
+                            & .form-check-input {
+                                border-color: $theme1;
+                                &:checked {
+                                    background-color: $theme1;
+                                    border-color: $theme1;
+                                }
+                            }
+                            & .form-check-label {
+                                font-size: 16px;
+                                font-weight: 400;
+                                text-decoration: none;
+                                text-transform: capitalize;
+                            }
+                            & .forgotPass {
+                                color: $theme1;
+                                font-size: 16px;
+                                font-weight: 400;
+                                text-decoration: none;
+                                text-transform: capitalize;
+                            }
+                            & .btnstyle1 {
+                                padding: 10px;
+                                width: 50%;
+                            }
+                            & .formAccountHeading {
+                                font-size: 16px;
+                                font-weight: 400;
+                                // text-transform: capitalize;
+                                color: $black;
+                            }
+                            & .formSocialAccount {
+                                & .formSocialtem {
+                                    padding-right: 0px !important;
+                                    &:last-child{
+                                        padding-right: 15px !important;
+                                    }
+                                    & .formSocialIcon {
+                                        width: 30px;
+                                        height: 30px;
+                                        border: 1px solid $theme1;
+                                        padding: 7px;
+                                        background-color: $white;
+                                        transition: 0.3s;
+                    
+                                        &:hover {
+                                            transform: scale(1.1);
+                                        }
+                                    }
+                                }
+                            }
+                            & .formLink {
+                                font-size: 16px;
+                                font-weight: 400;
+                                
+                                & .formlinktext {
+                                    color: $theme2;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 
@@ -2002,6 +2288,48 @@
             }
         }
         }
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(md) {
@@ -2611,6 +2939,49 @@
                 }
             }
         }
+
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(lg) {
@@ -3140,6 +3511,49 @@
                                 & img {
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
                         }
                     }
                 }
@@ -3754,6 +4168,49 @@
                 }
             }
         }
+        
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-up(xxl) {
@@ -4358,6 +4815,49 @@
                                 & img {
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
                         }
                     }
                 }
@@ -4973,6 +5473,49 @@
                 }
             }
         }
+        
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(xl) {
@@ -5583,6 +6126,49 @@
                                 & img {
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
                         }
                     }
                 }
@@ -6217,6 +6803,49 @@
                                 & img {
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contactSection {
+            & .contactInner {
+                
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
                         }
                     }
                 }
@@ -6877,6 +7506,58 @@
                                 & img {
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contactSection {
+            & .contactInner {
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                            font-size: 18px;
+                        }
+                    }
+                    & .subheading {
+                        font-size: 12px
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                            font-size: 14px;
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                            font-size: 12px
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                            position: inherit;
+                            margin-top: inherit !important;
+                            transform: inherit;
+                        }
+            
+                        & .contactDetailsHeading {
+                            text-align: left;
+                            font-size: 14px
+                        }
+                        & .contactDetailsPara {
+                            font-size: 12px
                         }
                     }
                 }
@@ -7558,6 +8239,48 @@
                                 & img {
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contactSection {
+            & .contactInner {
+                & .contactContent {
+                    & .sectionHeading {
+                        & .mainHeading {
+                        }
+                    }
+                    & .subheading {
+                    }
+            
+                    & .aboutOffice {
+                        & .detailHeading {
+                        }
+            
+                        & .aboutOfficeImg {
+            
+                            & .Img {
+                            }
+                        }
+                        
+                        & .aboutOfficePara {
+                        }
+                    }
+            
+                }
+                
+                & .contactDetails {
+            
+                    & .contactDetailsBg {
+            
+                        & .contactDetailsIcon {
+                        }
+            
+                        & .contactDetailsHeading {
+                        }
+                        & .contactDetailsPara {
                         }
                     }
                 }
