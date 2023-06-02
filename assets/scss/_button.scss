@@ -1,9 +1,9 @@
 .redButton {
     background-color: $theme1;
-    font-size: 22px;
-    color: $white;
+    font-size: 18px;
+    color: #fff;
     font-weight: 500;
-    padding: 12px 30px;
+    padding: 10px 24px;
     position: relative;
     z-index: 2;
     height: fit-content;
@@ -19,9 +19,11 @@
         z-index: -1;
         border-radius: 0.375rem;
     }
-    &:hover {
+    &:hover, &:active {
         color: $white !important;
         // z-index: 2;
+        box-shadow: none;
+        border: 1px solid $theme1 !important;
         background-color: $theme1;
         &::before {
             width: 100%;
@@ -31,10 +33,10 @@
 }
 .grayButton {
     background-color: $theme3;
-    font-size: 22px;
-    color: $white;
+    font-size: 18px;
+    color: #fff;
     font-weight: 500;
-    padding: 12px 30px;
+    padding: 10px 24px;
     position: relative;
     z-index: 2;
     height: fit-content;
@@ -101,7 +103,7 @@
 
 @include media-breakpoint-down(lg) {
     .redButton {
-        font-size: 18px;
+        font-size: 16px;
         &::before {
         }
         &:hover {
@@ -110,7 +112,7 @@
         }
     }
     .grayButton {
-        font-size: 18px;
+        font-size: 16px;
         &::before {
         }
         &:hover {
@@ -122,8 +124,8 @@
 
 @include media-breakpoint-down(md) {
     .redButton {
-        font-size: 16px;
-        padding: 10px 24px;;
+        font-size: 14px;
+        padding: 8px 22px;
         &::before {
         }
         &:hover {
@@ -132,8 +134,8 @@
         }
     }
     .grayButton {
-        font-size: 16px;
-        padding: 10px 24px;;
+        font-size: 14px;
+        padding: 8px 22px;
         &::before {
         }
         &:hover {

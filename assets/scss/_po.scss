@@ -287,7 +287,7 @@
                         top: 0;
                         height: 100%;
                         width: 100%;
-                        background-color: $theme3;
+                        background-color: lighten($color: $theme3, $amount: 15);
                         transform: scale(0);
                         transform-origin: right bottom;
                         border-radius: 500px 0 0;
@@ -304,7 +304,7 @@
                                 // color: $white !important;
                             }
                             & .serviceCardPara {
-                                color: $white !important;
+                                // color: $white !important;
                             }
                         }
                         & .serviceCardImg {
@@ -1409,7 +1409,8 @@
                 & .contactContent {
                     & .sectionHeading {
                         & .mainHeading {
-            
+                            font-size: 34px;
+                            font-weight: 500;
                         }
                     }
                     & .subheading {
@@ -1527,12 +1528,13 @@
                                     &:checked {
                                         & ~  .formRadioButton {
                                             // background-color: rgb($theme1, 0.5);
-                                            box-shadow:3px 3px 11px -5px $theme1;
+                                                box-shadow:3px 3px 11px -5px $theme1;
+                                                border: 2px solid $theme1;
                                         }
                                     }
                                 }
                                 & .formRadioButton {
-                                    border: 2px solid $theme1;
+                                    border: 2px solid lighten($color: $theme1, $amount: 30);
                                     font-size: 12px;
                                     font-weight: 600;
                                     text-transform: capitalize;
@@ -1641,6 +1643,9 @@
                                 &:checked {
                                     background-color: $theme1;
                                     border-color: $theme1;
+                                }
+                                &~ .form-check-Label {
+                                    border: 1px solid $theme1;
                                 }
                             }
                             & .form-check-label {
